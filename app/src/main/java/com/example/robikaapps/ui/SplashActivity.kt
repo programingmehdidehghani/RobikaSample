@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.robikaapps.R
+import com.example.robikaapps.models.Posts
 import java.util.*
 
 class SplashActivity : AppCompatActivity() {
@@ -26,6 +27,13 @@ class SplashActivity : AppCompatActivity() {
 
 
     fun insertPosts(){
+        var comment : kotlin.collections.List<String> = listOf(
+            ""
+        )
 
+         val posts = Posts(
+             1,"زندگی در شرایط سخت"
+         ,"https://picsum.photos/id/0/5000/3333" ,100,comment
+         )
     }
 }
