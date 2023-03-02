@@ -27,13 +27,13 @@ class SplashActivity : AppCompatActivity() {
 
 
     fun insertPosts(){
-        var comment : kotlin.collections.List<String> = listOf(
+     /*   var comment : kotlin.collections.List<String> = listOf(
             ""
         )
 
          val posts = Posts(
-             1,"زندگی در شرایط سخت"
-         ,"https://picsum.photos/id/0/5000/3333" ,100,comment
-         )
+             "زندگی در شرایط سخت","https://picsum.photos/id/0/5000/3333"
+         ,10 ,comment
+         )*/
     }
 }

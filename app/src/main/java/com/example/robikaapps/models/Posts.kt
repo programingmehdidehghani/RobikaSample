@@ -1,11 +1,12 @@
 package com.example.robikaapps.models
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
 @Entity(
-    tableName = "Posts"
+    tableName = "posts"
 )
 data class Posts(
     @PrimaryKey(autoGenerate = true)
@@ -13,5 +14,7 @@ data class Posts(
     var caption : String,
     var urlImage : String,
     var like : Int,
-    var comment : List<String>
+    var comment : List<String>?
 )
+
+
