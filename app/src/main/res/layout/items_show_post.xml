@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <ImageView
+       android:id="@+id/iv_picture_post_in_item"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:src="@drawable/logo_main"
+       android:layout_marginTop="12dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_favorite_in_show_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/baseline_favorite_border_24"
+        android:layout_marginStart="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_picture_post_in_item"/>
+
+    <TextView
+        android:id="@+id/tv_number_like_by_people_in_show_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_number_like_post"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_favorite_in_show_post"
+        app:layout_constraintTop_toTopOf="@+id/iv_favorite_in_show_post"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_favorite_in_show_post"/>
+
+    <ImageView
+        android:id="@+id/iv_comment_show_post_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/baseline_comment_outline_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_favorite_in_show_post"/>
+
+    <TextView
+        android:id="@+id/tv_number_comment_show_post_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_comment_show_post_item"
+        app:layout_constraintTop_toTopOf="@+id/iv_comment_show_post_item"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_comment_show_post_item"
+        android:text="@string/show_number_comment_post"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:justificationMode="inter_word"
+        android:text="طبیعت اثر انگشت خداست و با نگاه به هر نقطه و پدیده و حس و حالش می توان خدا را دید و شنید و احساس کرد. کاش بیشتر قدرش را بدانیم و در جهت تقدیس و حفظ آن کمی بیشتر تلاش کنیم تا این گنجینه سراسر عشق و رحمت را از خودمان نرنجانیم."
+        app:layout_constraintTop_toBottomOf="@+id/iv_comment_show_post_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

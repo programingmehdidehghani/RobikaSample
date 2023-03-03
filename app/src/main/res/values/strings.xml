@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RobikaApps</string>
+
+    <string name="show_number_like_post">Liked By %1$s People</string>
+    <string name="show_number_comment_post">%1$s Comment</string>
+
 </resources>
