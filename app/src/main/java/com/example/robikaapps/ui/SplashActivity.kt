@@ -1,5 +1,6 @@
 package com.example.robikaapps.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,8 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var viewModel: PostsViewModel
     var isFirstRun : Boolean = false
 
+
+    @SuppressLint("ApplySharedPref")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,11 +28,12 @@ class SplashActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelProviderFactory)[PostsViewModel::class.java]
         val sharedPreference =  getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
 
-        isFirstRun = sharedPreference.getBoolean("isFirstRun",true)
+        isFirstRun = sharedPreference.getBoolean("PREFERENCE_NAME",false)
 
         if (!isFirstRun){
             val editor = sharedPreference.edit()
-            editor.putBoolean("isFirstRun",true)
+            editor.putBoolean("PREFERENCE_NAME",true)
+            editor.commit()
             editor.apply()
             insertPosts()
             insertComments()
