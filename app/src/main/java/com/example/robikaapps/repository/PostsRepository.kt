@@ -11,7 +11,7 @@ class PostsRepository(
 
     suspend fun insertComments (comments: MutableList<Comment>) = db.getPostsDao().insertComments(comments)
 
-    suspend fun getShowNumberComment (id : Int) = db.getPostsDao().getShowComment(id)
+    suspend fun getShowNumberComment (id: Int,type: Int) = db.getPostsDao().getShowComment(id,type)
 
     fun getListPost () = db.getPostsDao().getListPosts()
 

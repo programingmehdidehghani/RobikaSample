@@ -11,5 +11,7 @@ data class Comment(
     @PrimaryKey(autoGenerate = false)
     var id : Int? = null,
     var postId : Int,
-    val comment : String
+    val comment : String,
+    val like : Int,
+    val isComment: Int,
 )

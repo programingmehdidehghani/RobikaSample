@@ -18,8 +18,8 @@ interface PostsDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertComments(article: MutableList<Comment>)
 
-    @Query("SELECT * FROM posts WHERE id = :id")
-    suspend fun getShowComment( id : Int) : List<Comment>
+    @Query("SELECT * FROM comment WHERE postId = :id AND isComment = :type")
+    suspend fun getShowComment(id: Int,type: Int) : List<Comment>
 
     @Query("SELECT * FROM posts")
     fun getListPosts() : LiveData<List<Post>>

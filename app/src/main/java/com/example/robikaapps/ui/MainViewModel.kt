@@ -23,8 +23,8 @@ class MainViewModel(
         postsRepository.insertComments(comments)
     }
 
-    fun getNumberComment(id : Int) = viewModelScope.launch {
-         postsRepository.getShowNumberComment(id)
+    fun getNumberComment(id: Int,type: Int) = viewModelScope.launch {
+         postsRepository.getShowNumberComment(id,type)
     }
 
     fun getShowPosts() : LiveData<List<Post>> {

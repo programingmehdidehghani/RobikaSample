@@ -16,12 +16,13 @@ import kotlinx.android.synthetic.main.activity_show_post.*
 
 class ShowPostActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: MainViewModel
+    lateinit var viewModel: MainViewModel
     private lateinit var showNumberComments : List<Comment>
     private lateinit var postsAdapter: PostsAdapter
     var isLoading = false
     var isLastPage = false
     var isScrolling = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,7 @@ class ShowPostActivity : AppCompatActivity() {
             postsAdapter.differ.submitList(it)
         })
     }
+
 
     private fun hideProgressBar() {
         progress_in_show_post_activity.visibility = View.INVISIBLE

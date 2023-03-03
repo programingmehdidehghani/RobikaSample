@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.robikaapps.R
 import com.example.robikaapps.models.Post
+import com.example.robikaapps.ui.ShowPostActivity
 import kotlinx.android.synthetic.main.items_show_post.view.*
 
 class PostsAdapter : RecyclerView.Adapter<PostsAdapter.ArticleViewHolder>() {
@@ -47,7 +48,7 @@ class PostsAdapter : RecyclerView.Adapter<PostsAdapter.ArticleViewHolder>() {
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val post = differ.currentList[position]
-        val numberLike : Int = post.like
+        (activity as ShowPostActivity).viewModel.getNumberComment(post.id!!,1)
 
 
         holder.itemView.apply {
