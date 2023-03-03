@@ -4,13 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import com.example.robikaapps.models.Comments
-import com.example.robikaapps.models.Posts
+import com.example.robikaapps.models.Comment
+import com.example.robikaapps.models.Post
 
 
 @Database(
-    entities = [Posts::class , Comments::class],
+    entities = [Post::class , Comment::class],
     version = 1
 )
 abstract class PostsDatabase : RoomDatabase(){

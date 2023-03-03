@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 @Entity(
     tableName = "comment"
 )
-data class Comments(
-    @PrimaryKey(autoGenerate = true)
+data class Comment(
+    @PrimaryKey(autoGenerate = false)
     var id : Int? = null,
     var postId : Int,
     val comment : String
