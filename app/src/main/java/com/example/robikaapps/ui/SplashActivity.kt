@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
     @SuppressLint("ApplySharedPref")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.splash_activity_main)
         val postsRepository = PostsRepository(PostsDatabase(this))
         val viewModelProviderFactory = NewsViewModelProviderFactory(application , postsRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory)[PostsViewModel::class.java]
