@@ -13,4 +13,6 @@ class PostsRepository(
 
     suspend fun getShowNumberComment (id : Int) = db.getPostsDao().getShowComment(id)
 
+    fun getListPost () = db.getPostsDao().getListPosts()
+
 }

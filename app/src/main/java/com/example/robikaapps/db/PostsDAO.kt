@@ -20,4 +20,7 @@ interface PostsDAO {
 
     @Query("SELECT * FROM posts WHERE id = :id")
     suspend fun getShowComment( id : Int) : List<Comment>
+
+    @Query("SELECT * FROM posts")
+    fun getListPosts() : LiveData<List<Post>>
 }

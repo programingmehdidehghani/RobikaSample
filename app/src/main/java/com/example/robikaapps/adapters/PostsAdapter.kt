@@ -27,7 +27,7 @@ class PostsAdapter : RecyclerView.Adapter<PostsAdapter.ArticleViewHolder>() {
 
     }
 
-    private val differ = AsyncListDiffer(this,differCallback)
+    val differ = AsyncListDiffer(this,differCallback)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         return ArticleViewHolder(
             LayoutInflater.from(parent.context).inflate(
