@@ -52,6 +52,7 @@ class PostsAdapter : RecyclerView.Adapter<PostsAdapter.ArticleViewHolder>() {
 
         holder.itemView.apply {
             Glide.with(this).load(post.urlImage).into(iv_picture_post_in_item)
+            tv_caption_in_show_post_item.text = post.caption
 
       /*      setOnClickListener {
                 onItemClickListener?.let { it(article) }

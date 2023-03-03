@@ -54,6 +54,7 @@
         android:text="@string/show_number_comment_post"/>
 
     <TextView
+        android:id="@+id/tv_caption_in_show_post_item"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
