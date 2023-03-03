@@ -3,15 +3,25 @@ package com.example.robikaapps.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import com.example.robikaapps.R
+import com.example.robikaapps.db.PostsDatabase
 import com.example.robikaapps.models.Posts
+import com.example.robikaapps.repository.PostsRepository
 import java.util.*
 import kotlin.collections.ArrayList
 
 class SplashActivity : AppCompatActivity() {
+
+    private lateinit var viewModel: PostsViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val postsRepository = PostsRepository(PostsDatabase(this))
+        val viewModelProviderFactory = NewsViewModelProviderFactory(application , postsRepository)
+        viewModel = ViewModelProvider(this, viewModelProviderFactory)[PostsViewModel::class.java]
+        insertPosts();
         Timer().schedule(object : TimerTask() {
             override fun run() {
                 val intent = Intent(this@SplashActivity, ShowPostActivity::class.java)
@@ -88,8 +98,10 @@ class SplashActivity : AppCompatActivity() {
         postList.add(post28)
         postList.add(post29)
         postList.add(post30)
+        viewModel.savedPosts(postList)
+    }
 
-
+    fun insertComments(){
 
     }
 }
