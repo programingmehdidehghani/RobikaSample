@@ -11,6 +11,6 @@ class NewsViewModelProviderFactory(
 ): ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return PostsViewModel(app , postsRepository) as T
+        return MainViewModel(app , postsRepository) as T
     }
 }

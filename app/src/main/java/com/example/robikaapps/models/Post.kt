@@ -12,7 +12,8 @@ data class Post(
     var id : Int? = null,
     var caption : String,
     var urlImage : String,
-    var like : Int
+    var like : Int,
+    var comment : Int
 )
 
 

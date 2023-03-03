@@ -8,7 +8,7 @@ import com.example.robikaapps.models.Post
 import com.example.robikaapps.repository.PostsRepository
 import kotlinx.coroutines.launch
 
-class PostsViewModel(
+class MainViewModel(
     app : Application,
     private val postsRepository : PostsRepository
 ) : AndroidViewModel(app) {
