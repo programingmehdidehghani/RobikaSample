@@ -119,14 +119,83 @@ class SplashActivity : AppCompatActivity() {
 
     fun insertComments(){
         val commentList = mutableListOf<Comment>()
-        val comment1 = Comment(1,1,"خیلی خوبه")
-        val comment2 = Comment(1,1,"بهتر از این نیست")
-        val comment3 = Comment(1,1,"عالی")
-        val comment4 = Comment(1,1,"بد")
+        val comment1 = Comment(1,1,"بی شک آن که درخت می کارد به غیر از خودش دیگران را نیز دوست دارد")
+        val comment2 = Comment(2,1,"طبیعت هرگز از مد نمی افتد زیرا شاهکار خداست\n" +
+                "\n")
+        val comment3 = Comment(3,1,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment4 = Comment(4,1,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment5 = Comment(5,1,"بد")
+        val comment6 = Comment(6,1,"بد")
+        val comment7 = Comment(7,1,"بد")
+        val comment8 = Comment(8,1,"بد")
+        val comment9 = Comment(9,1,"بد")
+        val comment10 = Comment(10,1,"بد")
+        val comment11 = Comment(11,1,"بد")
+        val comment12 = Comment(12,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment13 = Comment(13,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment14 = Comment(14,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment15 = Comment(15,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment16 = Comment(16,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment17 = Comment(17,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment18 = Comment(18,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment19 = Comment(19,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment20 = Comment(20,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment21 = Comment(21,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment22 = Comment(22,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment23 = Comment(23,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment24 = Comment(24,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment25 = Comment(25,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment26 = Comment(26,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment27 = Comment(27,2,"جرات داشته باشید و جهان را برای کشف مکان های زیبا و سر به مهر آن جستجو کنید\n" +
+                "\n")
+        val comment28 = Comment(28,2,"بد")
+
         commentList.add(comment1)
         commentList.add(comment2)
         commentList.add(comment3)
         commentList.add(comment4)
+        commentList.add(comment5)
+        commentList.add(comment6)
+        commentList.add(comment7)
+        commentList.add(comment8)
+        commentList.add(comment9)
+        commentList.add(comment10)
+        commentList.add(comment11)
+        commentList.add(comment12)
+        commentList.add(comment13)
+        commentList.add(comment14)
+        commentList.add(comment15)
+        commentList.add(comment16)
+        commentList.add(comment17)
+        commentList.add(comment18)
+        commentList.add(comment19)
+        commentList.add(comment20)
+        commentList.add(comment21)
+        commentList.add(comment22)
+        commentList.add(comment23)
+        commentList.add(comment24)
+        commentList.add(comment25)
+        commentList.add(comment26)
+        commentList.add(comment27)
+        commentList.add(comment28)
+
         viewModel.savedComments(commentList)
 
 
