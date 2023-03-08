@@ -1,10 +1,7 @@
 package com.example.robikaapps.db
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.robikaapps.models.Comment
 import com.example.robikaapps.models.Post
 
@@ -20,6 +17,8 @@ interface PostsDAO {
 
     @Query("SELECT * FROM comment WHERE postId = :id AND isComment = :type")
     suspend fun getShowComment(id: Int,type: Int) : MutableList<Comment>
+
+
 
     @Query("SELECT * FROM posts")
     fun getListPosts() : LiveData<List<Post>>

@@ -1,6 +1,7 @@
 package com.example.robikaapps.repository
 
 import com.example.robikaapps.db.PostsDatabase
+import com.example.robikaapps.db.PostsWithComments
 import com.example.robikaapps.models.Comment
 import com.example.robikaapps.models.Post
 
@@ -14,5 +15,7 @@ class PostsRepository(
     suspend fun getShowNumberComment (id: Int,type: Int) : MutableList<Comment> = db.getPostsDao().getShowComment(id,type)
 
     fun getListPost () = db.getPostsDao().getListPosts()
+
+
 
 }

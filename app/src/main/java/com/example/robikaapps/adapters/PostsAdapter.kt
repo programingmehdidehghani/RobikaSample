@@ -1,5 +1,7 @@
 package com.example.robikaapps.adapters
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +16,8 @@ import com.example.robikaapps.ui.ShowPostActivity
 import kotlinx.android.synthetic.main.items_show_post.view.*
 import kotlinx.coroutines.Job
 
-class PostsAdapter : RecyclerView.Adapter<PostsAdapter.ArticleViewHolder>() {
+class PostsAdapter(private val showPostActivity: ShowPostActivity) : RecyclerView.Adapter<PostsAdapter.ArticleViewHolder>() {
+
 
 
     inner class ArticleViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
@@ -50,9 +53,10 @@ class PostsAdapter : RecyclerView.Adapter<PostsAdapter.ArticleViewHolder>() {
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val post = differ.currentList[position]
-        val activity = ShowPostActivity()
-        val showComment : Job = activity.viewModel.getNumberComment(post.id!!,1)
 
+        val showComment : MutableList<Comment> =
+            showPostActivity.viewModel.getNumberComment(post.id!!,1) as MutableList<Comment>
+        showComment.size
 
         holder.itemView.apply {
             Glide.with(this).load(post.urlImage).into(iv_picture_post_in_item)

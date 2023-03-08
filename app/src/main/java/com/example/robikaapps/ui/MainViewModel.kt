@@ -7,12 +7,13 @@ import androidx.lifecycle.viewModelScope
 import com.example.robikaapps.models.Comment
 import com.example.robikaapps.models.Post
 import com.example.robikaapps.repository.PostsRepository
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class MainViewModel(
-    app : Application,
-    private val postsRepository : PostsRepository
+    app: Application,
+    private val postsRepository: PostsRepository
 ) : AndroidViewModel(app) {
+
 
 
     fun savedPosts(posts: MutableList<Post>) = viewModelScope.launch {
@@ -23,11 +24,16 @@ class MainViewModel(
         postsRepository.insertComments(comments)
     }
 
-    fun getNumberComment(id: Int,type: Int) : List<Comment> = viewModelScope.launch {
-         return@launch postsRepository.getShowNumberComment(id,type)
+    fun getNumberComment(id: Int, type: Int): MutableList<Comment>  {
+        var showComment : List<Comment> = emptyList()
+        CoroutineScope(Dispatchers.Default).launch {
+            showComment =  postsRepository.getShowNumberComment(id,type)
+        }
+        return showComment.toMutableList()
+
     }
 
-    fun getShowPosts() : LiveData<List<Post>> {
+    fun getShowPosts(): LiveData<List<Post>> {
         return postsRepository.getListPost()
     }
 }
