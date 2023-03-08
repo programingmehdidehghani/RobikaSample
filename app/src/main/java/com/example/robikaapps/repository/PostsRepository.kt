@@ -15,6 +15,8 @@ class PostsRepository(
 
     fun getShowNumberComment (id: Int,type: Int) : LiveData<List<Comment>> = db.getPostsDao().getShowComment(id,type)
 
+    fun getShowNumberLike (id: Int,like: Int) : LiveData<List<Comment>> = db.getPostsDao().getShowComment(id,like)
+
     fun getListPost () = db.getPostsDao().getListPosts()
 
 

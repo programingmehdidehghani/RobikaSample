@@ -14,8 +14,6 @@ class MainViewModel(
     private val postsRepository: PostsRepository
 ) : AndroidViewModel(app) {
 
-    private var showComment: MutableList<Comment> = mutableListOf()
-
 
     fun savedPosts(posts: MutableList<Post>) = viewModelScope.launch {
         postsRepository.insertPosts(posts)
@@ -27,6 +25,10 @@ class MainViewModel(
 
     fun getNumberComment(id: Int, type: Int): LiveData<List<Comment>>  {
         return postsRepository.getShowNumberComment(id,type)
+    }
+
+    fun getNumberLike(id: Int, like: Int): LiveData<List<Comment>>  {
+        return postsRepository.getShowNumberLike(id,like)
     }
 
     fun getShowPosts(): LiveData<List<Post>> {

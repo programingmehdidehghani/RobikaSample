@@ -30,7 +30,6 @@ import javax.sql.DataSource
 @Suppress("UNSAFE_CALL_ON_PARTIALLY_DEFINED_RESOURCE")
 class PostsAdapter(private val showPostActivity: ShowPostActivity) : RecyclerView.Adapter<PostsAdapter.ArticleViewHolder>() {
 
-    private lateinit var showComment : MutableList<Comment>
 
     inner class ArticleViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
 
@@ -100,6 +99,9 @@ class PostsAdapter(private val showPostActivity: ShowPostActivity) : RecyclerVie
 
             showPostActivity.viewModel.getNumberComment(post.id!!,1).observe(showPostActivity, Observer {
                 tv_number_comment_show_post_item.text = showPostActivity.getString(R.string.show_number_comment_post,it.size)
+            })
+            showPostActivity.viewModel.getNumberLike(post.id!!,1).observe(showPostActivity, Observer {
+                tv_number_like_by_people_in_show_post.text = showPostActivity.getString(R.string.show_number_like_post,it.size)
             })
       /*      setOnClickListener {
                 onItemClickListener?.let { it(article) }

@@ -18,7 +18,8 @@ interface PostsDAO {
     @Query("SELECT * FROM comment WHERE postId = :id AND isComment = :type")
     fun getShowComment(id: Int,type: Int) : LiveData<List<Comment>>
 
-
+    @Query("SELECT * FROM comment WHERE postId = :id AND isComment = :like")
+    fun getShowLike(id: Int,like: Int) : LiveData<List<Comment>>
 
     @Query("SELECT * FROM posts")
     fun getListPosts() : LiveData<List<Post>>
