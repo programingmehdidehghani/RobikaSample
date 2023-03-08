@@ -16,7 +16,7 @@ interface PostsDAO {
     suspend fun insertComments(article: MutableList<Comment>)
 
     @Query("SELECT * FROM comment WHERE postId = :id AND isComment = :type")
-    suspend fun getShowComment(id: Int,type: Int) : MutableList<Comment>
+    fun getShowComment(id: Int,type: Int) : LiveData<List<Comment>>
 
 
 

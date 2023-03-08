@@ -14,6 +14,7 @@ class MainViewModel(
     private val postsRepository: PostsRepository
 ) : AndroidViewModel(app) {
 
+    private var showComment: MutableList<Comment> = mutableListOf()
 
 
     fun savedPosts(posts: MutableList<Post>) = viewModelScope.launch {
@@ -24,13 +25,8 @@ class MainViewModel(
         postsRepository.insertComments(comments)
     }
 
-    fun getNumberComment(id: Int, type: Int): MutableList<Comment>  {
-        var showComment : List<Comment> = emptyList()
-        CoroutineScope(Dispatchers.Main).launch {
-            showComment =  postsRepository.getShowNumberComment(id,type)
-        }
-        return showComment.toMutableList()
-
+    fun getNumberComment(id: Int, type: Int): LiveData<List<Comment>>  {
+        return postsRepository.getShowNumberComment(id,type)
     }
 
     fun getShowPosts(): LiveData<List<Post>> {
