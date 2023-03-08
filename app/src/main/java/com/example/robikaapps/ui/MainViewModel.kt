@@ -26,7 +26,7 @@ class MainViewModel(
 
     fun getNumberComment(id: Int, type: Int): MutableList<Comment>  {
         var showComment : List<Comment> = emptyList()
-        CoroutineScope(Dispatchers.Default).launch {
+        CoroutineScope(Dispatchers.Main).launch {
             showComment =  postsRepository.getShowNumberComment(id,type)
         }
         return showComment.toMutableList()

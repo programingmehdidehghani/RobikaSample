@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.TypedArrayUtils.getString
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -16,9 +17,10 @@ import com.example.robikaapps.ui.ShowPostActivity
 import kotlinx.android.synthetic.main.items_show_post.view.*
 import kotlinx.coroutines.Job
 
+@Suppress("UNSAFE_CALL_ON_PARTIALLY_DEFINED_RESOURCE")
 class PostsAdapter(private val showPostActivity: ShowPostActivity) : RecyclerView.Adapter<PostsAdapter.ArticleViewHolder>() {
 
-
+    private lateinit var showComment : MutableList<Comment>
 
     inner class ArticleViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
 
@@ -51,17 +53,18 @@ class PostsAdapter(private val showPostActivity: ShowPostActivity) : RecyclerVie
     private var onItemClickListener : ((Post) -> Unit) ?= null
 
 
+    @SuppressLint("StringFormatMatches")
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val post = differ.currentList[position]
 
-        val showComment : MutableList<Comment> =
-            showPostActivity.viewModel.getNumberComment(post.id!!,1) as MutableList<Comment>
+        showComment  = showPostActivity.viewModel.getNumberComment(post.id!!,1) as MutableList<Comment>
         showComment.size
 
         holder.itemView.apply {
             Glide.with(this).load(post.urlImage).into(iv_picture_post_in_item)
             tv_caption_in_show_post_item.text = post.caption
-
+            tv_number_comment_show_post_item.text = showPostActivity.getString(R.string.show_number_comment_post,showComment.size)
+            tv_number_comment_show_post_item.text = showPostActivity.getString(R.string.show_number_comment_post,showComment.size)
       /*      setOnClickListener {
                 onItemClickListener?.let { it(article) }
             }*/

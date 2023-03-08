@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
     tableName = "posts"
 )
 data class Post(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
     var id : Int? = null,
     var caption : String,
     var urlImage : String,
