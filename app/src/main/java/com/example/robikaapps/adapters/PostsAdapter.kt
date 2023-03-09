@@ -68,7 +68,7 @@ class PostsAdapter(private val showPostActivity: ShowPostActivity) : RecyclerVie
 
 
         holder.itemView.apply {
-            Glide.with(this).load("https://www.soorban.com/images/news/2022/03/1647069572_U9tU4.jpg")
+            Glide.with(this).load(post.urlImage)
                 .listener(object: RequestListener<Drawable> {
                     override fun onLoadFailed(
                         e: GlideException?,
